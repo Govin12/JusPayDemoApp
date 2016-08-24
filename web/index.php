@@ -28,7 +28,7 @@ $app->get('/', function() use($app) {
 });
 
 $app->post('/order/create', function (Request $request) {
-	$orderId = $request->get('order_id');
+	$orderId = uniqid();
 	$amount = $request->get('amount');
 
 	$response = Juspay\ExpressCheckout::$Order->createOrder(new Juspay\Core\OrderCreateParams($orderId, $amount));
