@@ -1,28 +1,12 @@
-# php-getting-started
+# PHP Sample integration
 
-A barebones PHP app that makes use of the [Silex](http://silex.sensiolabs.org/) web framework, which can easily be deployed to Heroku.
+See the app [here](juspay-php-demo.herokuapp.com)
+See the source code [here](https://bitbucket.org/juspay/php-server-heroku)
 
-This application supports the [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php) article - check it out.
+# Get the SDK
 
-## Deploying
+SDK is open source and see the code [here](https://bitbucket.org/juspay/juspay-php-client)
 
-Install the [Heroku Toolbelt](https://toolbelt.heroku.com/).
+# Support
 
-```sh
-$ git clone git@github.com:heroku/php-getting-started.git # or clone your own fork
-$ cd php-getting-started
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using PHP on Heroku, see these Dev Center articles:
-
-- [Getting Started with PHP on Heroku](https://devcenter.heroku.com/articles/getting-started-with-php)
-- [PHP on Heroku](https://devcenter.heroku.com/categories/php)
+Drop a mail to support@juspay.in for any queries.
