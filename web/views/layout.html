@@ -30,28 +30,29 @@
 					<input type="hidden" class="payment_method_type" value="CARD" />
 					<input type="hidden" class="merchant_id" value="sriduth_sandbox_test" />
 					<input type="hidden" class="redirect" value="false" />
+					<input type="hidden" class="order_id" value="" />
 
 					<div class="field">
 						<label>Card Number</label>
-						<input required type="text" class="card_number" name="first-name" placeholder="First Name">
+						<input required type="text" class="card_number" name="first-name" placeholder="Credit / Debit card number">
 					</div>
 					<div class="field">
 						<label>Name on Card</label>
-						<input required class="name_on_card" type="text" name="last-name" placeholder="Last Name">
+						<input required class="name_on_card" type="text" name="last-name" placeholder="Name on Card">
 					</div>
 					<div class="two fields">
 						<div class="field">
 							<label>Expiry Month</label>
-							<input required class="card_exp_month" type="number" name="">
+							<input required class="card_exp_month"  min="1" max="12" type="number" name="">
 						</div>
 						<div class="field">
 							<label>Expiry Year</label>
-							<input required class="card_exp_year" type="number" name="">
+							<input required class="card_exp_year" min="2016" max="2049" type="number" name="">
 						</div>
 					</div>
 					<div class="field">
 						<label>CVV</label>
-						<input required type="number" class="card_security_code" name="">
+						<input required type="number" class="security_code" name="" placeholder="CVV">
 					</div>
 					<div class="field">
 						<div class="ui checkbox">
@@ -82,6 +83,13 @@
 		}
 
 		$('#payment-page').modal('show');
+		$('#makePaymentButton')
+				.removeClass('green')
+				.addClass('loading')
+				.addClass()
+				.prop('disabled', true)
+				.html('Creating Order');
+
 		$.post('/order/create', {
 			amount: amount
 		}).done(function (res) {
@@ -90,10 +98,11 @@
 				$('#makePaymentButton')
 					.removeClass('loading')
 					.addClass('green')
+					.html('Make Payment')
 					.prop('disabled', false);
 
-				$('#card_form')
-					.append($('<input type="hidden" class="order_id" value="'+res.body.order_id+'"/>'));
+				$('.order_id')
+					.val(res.body.order_id);
 
 				var jp = Juspay.Setup({
 					payment_form: '#card_form',
