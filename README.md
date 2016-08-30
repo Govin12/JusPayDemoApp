@@ -1,6 +1,6 @@
 # PHP Sample integration
 
-See the app [here](juspay-php-demo.herokuapp.com)
+See the app [here](http://juspay-php-demo.herokuapp.com/)
 
 
 See the source code [here](https://bitbucket.org/juspay/php-server-heroku)
