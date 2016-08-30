@@ -1,11 +1,17 @@
 <?php
 
+use Juspay\JuspayEnvironment;
+use Juspay\Model\Order;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 require('../vendor/autoload.php');
 
-Juspay\JuspayConfiguration::configureAndSetUp(Juspay\JuspayConfiguration::ENVIRONMENT_SANDBOX, 'sriduth_sandbox_test', 'F740059B99694ABF83A7C1C879B6892B', 15, 30);
+JuspayEnvironment::init()
+	->withApiKey("F740059B99694ABF83A7C1C879B6892B")
+	->withBaseUrl(JuspayEnvironment::SANDBOX_BASE_URL)
+	->withConnectTimeout(15)
+	->withReadTimeout(30);
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -31,7 +37,7 @@ $app->post('/order/create', function (Request $request) {
 	$orderId = uniqid();
 	$amount = $request->get('amount');
 
-	$response = Juspay\ExpressCheckout::$Order->createOrder(new Juspay\Core\OrderCreateParams($orderId, $amount));
+	$response = Order::create(array("order_id" => $orderId, "amount" => $amount));
 	
 	return new Response(json_encode($response), 200);
 });

@@ -94,7 +94,7 @@
 			amount: amount
 		}).done(function (res) {
 			res = JSON.parse(res);
-			if(res.body.status === 'CREATED') {
+			if(res.status === 'CREATED') {
 				$('#makePaymentButton')
 					.removeClass('loading')
 					.addClass('green')
@@ -102,13 +102,13 @@
 					.prop('disabled', false);
 
 				$('.order_id')
-					.val(res.body.order_id);
+					.val(res.orderId);
 
 				var jp = Juspay.Setup({
 					payment_form: '#card_form',
 					type: 'inline',
 					success_handler: function () {
-
+						$('#payment-page').modal('dismiss');
 					},
 					error_handler: function () {
 

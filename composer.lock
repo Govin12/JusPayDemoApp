@@ -4,50 +4,63 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9019205f4669b6b347f83b0d86773afc",
-    "content-hash": "de2c380600ab9b3e201a91e393893e2f",
+    "hash": "cb27e5e9942012bf68fe00274cdec7d3",
+    "content-hash": "6bf7c08708aa666e73c63c6b9dfc2ae7",
     "packages": [
         {
-            "name": "juspay/express-checkout",
-            "version": "dev-master",
+            "name": "juspay/expresscheckout-php-sdk",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://bitbucket.org/juspay/juspay-php-client.git",
-                "reference": "fc2ee7b6d766dded3c1a79151bece4ef82d9f317"
+                "url": "https://bitbucket.org/juspay/expresscheckout-php-sdk.git",
+                "reference": "2a15eda0ec2150f8da6bc9fda4d07ee9e8caf079"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://bitbucket.org/juspay/juspay-php-client/get/fc2ee7b6d766dded3c1a79151bece4ef82d9f317.zip",
-                "reference": "fc2ee7b6d766dded3c1a79151bece4ef82d9f317",
+                "url": "https://bitbucket.org/juspay/expresscheckout-php-sdk/get/2a15eda0ec2150f8da6bc9fda4d07ee9e8caf079.zip",
+                "reference": "2a15eda0ec2150f8da6bc9fda4d07ee9e8caf079",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.3.3"
             },
             "require-dev": {
-                "phpunit/phpunit": "5.4.6"
+                "phpunit/phpunit": "4.*"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Juspay\\": "src/",
-                    "Juspay\\Core\\": "src/core",
-                    "Juspay\\Util\\": "src/util"
+                    "Juspay\\": "lib",
+                    "Juspay\\Model\\": "lib/Model",
+                    "Juspay\\Exception\\": "lib/Exception"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
             "authors": [
                 {
-                    "name": "Sriduth Jayhari",
-                    "email": "sriduth.jayhari@juspay.in"
+                    "name": "Ankur Gupta",
+                    "email": "ankur.gupta@juspay.in"
                 }
             ],
             "description": "Express Checkout SDK for PHP allows easy integration with Juspay's EC payments as a service platform",
-            "time": "2016-07-07 06:38:41"
+            "homepage": "https://www.juspay.in",
+            "keywords": [
+                "ExpressCheckout",
+                "api",
+                "juspay",
+                "payment gateway",
+                "payment processing"
+            ],
+            "time": "2016-08-30 10:27:29"
         },
         {
             "name": "monolog/monolog",
-            "version": "1.21.0",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
@@ -477,12 +490,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "e0443f33eed869b430519f78f9c7adbf4d6aa3b1"
+                "reference": "628d9de66e71c7bd92e6024ac712ec0fb283bd31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/e0443f33eed869b430519f78f9c7adbf4d6aa3b1",
-                "reference": "e0443f33eed869b430519f78f9c7adbf4d6aa3b1",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/628d9de66e71c7bd92e6024ac712ec0fb283bd31",
+                "reference": "628d9de66e71c7bd92e6024ac712ec0fb283bd31",
                 "shasum": ""
             },
             "require": {
@@ -551,7 +564,7 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
-            "time": "2016-08-23 13:40:05"
+            "time": "2016-08-29 08:54:53"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -618,12 +631,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "1f1e4c7200b4c5fb13d8b85a4a49529bd0bc1267"
+                "reference": "6009e6ef469d71429e381f2fd89e8d2db74e66ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/1f1e4c7200b4c5fb13d8b85a4a49529bd0bc1267",
-                "reference": "1f1e4c7200b4c5fb13d8b85a4a49529bd0bc1267",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/6009e6ef469d71429e381f2fd89e8d2db74e66ad",
+                "reference": "6009e6ef469d71429e381f2fd89e8d2db74e66ad",
                 "shasum": ""
             },
             "require": {
@@ -685,7 +698,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-08-18 15:27:21"
+            "time": "2016-08-25 18:15:34"
         },
         {
             "name": "symfony/twig-bridge",
@@ -770,16 +783,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.24.1",
+            "version": "1.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512"
+                "reference": "ffa2b812b07cceb163b30091aa54048b856d087b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/3566d311a92aae4deec6e48682dc5a4528c4a512",
-                "reference": "3566d311a92aae4deec6e48682dc5a4528c4a512",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/ffa2b812b07cceb163b30091aa54048b856d087b",
+                "reference": "ffa2b812b07cceb163b30091aa54048b856d087b",
                 "shasum": ""
             },
             "require": {
@@ -827,22 +840,22 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-05-30 09:11:59"
+            "time": "2016-08-18 00:09:08"
         }
     ],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
-            "version": "v109",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heroku/heroku-buildpack-php.git",
-                "reference": "cd2d13992b72d049aa270d4b745aae6329e0c037"
+                "reference": "b5c4a0b77a725c4ab9dc1736e5a8217824790093"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/cd2d13992b72d049aa270d4b745aae6329e0c037",
-                "reference": "cd2d13992b72d049aa270d4b745aae6329e0c037",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/b5c4a0b77a725c4ab9dc1736e5a8217824790093",
+                "reference": "b5c4a0b77a725c4ab9dc1736e5a8217824790093",
                 "shasum": ""
             },
             "bin": [
@@ -873,14 +886,12 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-07-21 11:26:05"
+            "time": "2016-08-26 14:02:29"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "juspay/express-checkout": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
