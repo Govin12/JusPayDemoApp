@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 require('../vendor/autoload.php');
 
 JuspayEnvironment::init()
-	->withApiKey("F740059B99694ABF83A7C1C879B6892B")
+	->withApiKey("4889406C0D164F73B83868F9475F179E")
 	->withBaseUrl(JuspayEnvironment::SANDBOX_BASE_URL)
 	->withConnectTimeout(15)
 	->withReadTimeout(30);
@@ -36,18 +36,23 @@ $app->get('/', function() use($app) {
 $app->post('/order/create', function (Request $request) {
 	$orderId = uniqid();
 	$amount = $request->get('amount');
-
-	$response = Order::create(array("order_id" => $orderId, "amount" => $amount));
+	$response = Order::create(array(
+		"order_id" => $orderId,
+		"amount" => $amount,
+		"return_url" => 'http://juspay-php-demo.herokuapp.com/order/payment-response'
+	));
 	
 	return new Response(json_encode($response), 200);
 });
 
-$app->get('/order/payment-response', function (Request $request) {
+$app->get('/order/payment-response', function (Request $request) use($app) {
 	$orderId = $request->get('order_id');
 	$status = $request->get('status');
 
-	if($status == 'SUCCESS') {
-		
+	if($status == 'CHARGED') {
+		return $app['twig']->render('success.twig');
+	} else {
+		return $app['twig']->render('failure.twig');
 	}
 });
 
