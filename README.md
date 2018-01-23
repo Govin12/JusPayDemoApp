@@ -9,7 +9,7 @@ See the source code [here](https://bitbucket.org/juspay/php-server-heroku)
 
 SDK is open source.
 
-See the code [here](https://bitbucket.org/juspay/juspay-php-client)
+See the code [here](https://bitbucket.org/juspay/expresscheckout-php-sdk)
 
 # Support
 
